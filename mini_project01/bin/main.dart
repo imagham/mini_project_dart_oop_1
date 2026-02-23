@@ -8,8 +8,10 @@
 //   developer1.generateReport();
 // }
 
-import 'package:mini_project01/buku.dart';
-import 'package:mini_project01/buku_perpustakaan.dart'; 
+
+/* MINI PROJECT 2 
+import 'package:mini_project01/MP1/buku.dart';
+import 'package:mini_project01/MP1/buku_perpustakaan.dart'; 
 
 void main() {
   BukuPerpustakaan buku = BukuPerpustakaan();
@@ -24,4 +26,22 @@ void main() {
 
   buku.kembalikan();
   buku.tampilkanInfo();
+}
+*/
+
+import 'package:mini_project01/MP3/business_passenger.dart';
+import 'package:mini_project01/MP3/economy_passenger.dart';
+import 'package:mini_project01/MP3/first_class_passenger.dart';
+import 'package:mini_project01/MP3/passenger.dart';
+void main() {
+
+  List<Passenger> passenger = [
+    EconomyPassenger("Budi"),
+    BusinessPassenger("Andi"),
+    FirstClassPassenger("Sinta"),
+  ];
+
+  for (var p in passenger) {
+    p.infoTiket();
+  }
 }
