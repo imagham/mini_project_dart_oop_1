@@ -1,24 +1,21 @@
-import 'ekonomi_bus.dart';
-import 'bisnis_bus.dart';
-import 'eksekutif_bus.dart';
+import 'krl.dart';
+import 'lrt.dart';
 import 'penumpang.dart';
 
 void main() {
 
-  List<Penumpang> penumpang = [
-    EkonomiBus.jakartaBandung("Budi"),
-    EkonomiBus.jakartaSolo("Wawan"),
-    EkonomiBus.jakartaYogyakarta("Joko"),
-    BisnisBus("Andi", "Jakarta - Bandung"),
-    EksekutifBus("Sinta", "Jakarta - Bandung"),
+  List<Penumpang> daftarTransportasi = [
+    KRL.manggaraiBogor("Budi", 2),
+    KRL.manggaraiBekasi("Andi", 1),
+    KRL.manggaraiJakartaKota("Sinta", 3),
+    LRT.manggaraiDukuhAtas("Rina", 2),
+    LRT.manggaraiVelodrome("Dodi", 1),
   ];
 
-  for (var p in penumpang) {
-    if (p is EkonomiBus) {
+  for (var p in daftarTransportasi) {
+    if (p is KRL) {
       p.cetakTiket();
-    } else if (p is BisnisBus) {
-      p.cetakTiket();
-    } else if (p is EksekutifBus) {
+    } else if (p is LRT) {
       p.cetakTiket();
     }
   }

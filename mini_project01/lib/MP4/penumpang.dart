@@ -1,38 +1,36 @@
 abstract class Penumpang {
   String _nama;
   String _rute;
+  int _jumlahPenumpang;
 
-  // Initializing Formal Parameter
-  Penumpang(this._nama, this._rute);
+  Penumpang(this._nama, this._rute, this._jumlahPenumpang);
 
   // Getter
   String get nama => _nama;
   String get rute => _rute;
+  int get jumlahPenumpang => _jumlahPenumpang;
 
-  // Setter dengan kondisi
   set nama(String value) {
     if (value.isNotEmpty) {
       _nama = value;
     }
   }
 
-  set rute(String value) {
-    if (value.isNotEmpty) {
-      _rute = value;
+  set jumlahPenumpang(int value) {
+    if (value > 0) {
+      _jumlahPenumpang = value;
     }
   }
 
-  // Format harga ke rupiah sederhana
   String formatRupiah(int harga) {
     return "Rp $harga";
   }
 
-  // Method cetak info dasar
   void infoPenumpang() {
     print("Nama Penumpang : $_nama");
     print("Rute : $_rute");
+    print("Jumlah Penumpang : $_jumlahPenumpang");
   }
 
-  // Abstract method
   int hitungHarga();
 }
